@@ -25,7 +25,7 @@ class NiwobbsSpider(Spider):
             # 第1，2页的时间提取规则
             #item['lasttime'] = '最后回复时间：'+''.join(post.xpath('.//a[@class="time"]/span/span/@title').extract())
             #第三页之后的时间提取规则
-            item['lasttime'] = '最后回复时间：'+''.join(post.xpath('.//a[@class="time"]/span/text()').extract())
+            item['lasttime'] = ''.join(post.xpath('.//a[@class="time"]/span/text()').extract())
             item['url'] = 'http://bbs.niiwoo.com/'+''.join(post.xpath('.//div[@class="thread-tit"]/a/@href').extract())
 
             print(item)
